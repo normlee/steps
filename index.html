@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Sample Table with 4 Columns and 20 Rows</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Generating 20 rows dynamically -->
+            <!-- You can replace the data inside <td> with your own values -->
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write("<tr>");
+                    document.write(`<td>Row ${i} - Col 1</td>`);
+                    document.write(`<td>Row ${i} - Col 2</td>`);
+                    document.write(`<td>Row ${i} - Col 3</td>`);
+                    document.write(`<td>Row ${i} - Col 4</td>`);
+                    document.write("</tr>");
+                }
+            </script>
+        </tbody>
+    </table>
+
+</body>
+</html>
