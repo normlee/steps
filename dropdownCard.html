@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Topics Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Define topics with random hyperlinks
+        const topics = {
+            "Abdominal Aortic Aneurysm": "https://www.mayoclinic.org",
+            "atrial fibrillation": "https://www.heart.org",
+            "atrial flutter": "https://www.cdc.gov",
+            "age changes": "https://www.ncbi.nlm.nih.gov",
+            "Aldosterone Antagonists": "https://www.medscape.com",
+            "amiodarone": "https://www.rxlist.com",
+            "amyloid": "https://www.healthline.com",
+            "angina": "https://www.webmd.com",
+            "antiarrythmics": "https://www.clevelandclinic.org",
+            "aortic dissection": "https://www.hopkinsmedicine.org",
+            "aortic regurgitation": "https://www.uptodate.com",
+            "aortic compliance": "https://www.ncbi.nlm.nih.gov",
+            "aortic injury": "https://www.nejm.org",
+            "aortic stenosis": "https://www.acc.org",
+            "angiotensin receptor blocker": "https://www.medicalnewstoday.com",
+            "atrial septal defect": "https://www.heart.org",
+            "atheroembolism": "https://www.cdc.gov",
+            "atherosclerosis": "https://www.ncbi.nlm.nih.gov",
+            "athlete heart": "https://www.sportsmedicine.org",
+            "AV Node": "https://www.ahajournals.org",
+            "AV Block": "https://www.nhs.uk",
+            "beta blockers": "https://www.drugs.com",
+            "blood flow curve": "https://www.medicalnewstoday.com",
+            "bradycardia": "https://www.mayoclinic.org",
+            "CABG": "https://www.hopkinsmedicine.org",
+            "CAD": "https://www.acc.org",
+            "cardiac cath": "https://www.heart.org",
+            "cardiac conduction system": "https://www.cdc.gov",
+            "cardiac output": "https://www.ncbi.nlm.nih.gov",
+            "cardiac transplant rejection": "https://www.uptodate.com",
+            "coronary blood flow": "https://www.medscape.com",
+            "diastolic dysfunction": "https://www.clevelandclinic.org",
+            "digoxin": "https://www.drugs.com",
+            "endocarditis": "https://www.nejm.org",
+            "exercise": "https://www.healthline.com",
+            "heart failure": "https://www.heart.org",
+            "Hypertrophic Cardiomyopathy": "https://www.acc.org",
+            "Hypertension": "https://www.ncbi.nlm.nih.gov",
+            "ischemia": "https://www.mayoclinic.org",
+            "long QT syndrome": "https://www.medicalnewstoday.com",
+            "mitral stenosis": "https://www.uptodate.com",
+            "mitral regurgitation": "https://www.medscape.com",
+            "Myocardial Infarction": "https://www.nejm.org",
+            "nitrates": "https://www.drugs.com",
+            "Patent Ductus Arteriosus": "https://www.cdc.gov",
+            "Pulmonary Embolism": "https://www.heart.org",
+            "shock": "https://www.ncbi.nlm.nih.gov",
+            "statins": "https://www.medscape.com",
+            "syncope": "https://www.acc.org",
+            "torsades de pointe": "https://www.mayoclinic.org",
+            "wall stress": "https://www.uptodate.com"
+        };
+
+        function navigateToSite() {
+            const dropdown = document.getElementById("medicalDropdown");
+            const selectedTopic = dropdown.value;
+            if (selectedTopic) {
+                window.location.href = topics[selectedTopic]; // Redirect to the corresponding link
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Medical Topics Dropdown</h2>
+    <label for="medicalDropdown">Select a topic:</label>
+    <select id="medicalDropdown">
+        <option value="">-- Select a Topic --</option>
+        <!-- Dynamically add options -->
+        <script>
+            for (let topic in topics) {
+                document.write(`<option value="${topic}">${topic}</option>`);
+            }
+        </script>
+    </select>
+    <button onclick="navigateToSite()">Go</button>
+
+</body>
+</html>
