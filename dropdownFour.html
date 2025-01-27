@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Topics Dropdown</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+        .dropdown-container {
+            text-align: center;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // Define categories with topics and hyperlinks
+        const dropdownData = {
+            "Cardiology": {
+                "Abdominal Aortic Aneurysm": "https://www.mayoclinic.org",
+                "atrial fibrillation": "https://www.heart.org",
+                "aortic stenosis": "https://www.acc.org",
+                "Myocardial Infarction": "https://normlee.github.io/steps/MI_summary_table.pdf",
+                "heart failure": "https://normlee.github.io/steps/HF_summary_table.pdf"
+            },
+            "Renal": {
+                "chronic kidney disease": "https://www.kidney.org",
+                "acute kidney injury": "https://www.uptodate.com",
+                "glomerulonephritis": "https://www.ncbi.nlm.nih.gov",
+                "renal artery stenosis": "https://www.medscape.com"
+            },
+            "Endo": {
+                "diabetes mellitus": "https://www.diabetes.org",
+                "thyroid disorders": "https://www.thyroid.org",
+                "cushing syndrome": "https://www.ncbi.nlm.nih.gov",
+                "pheochromocytoma": "https://www.medicalnewstoday.com"
+            },
+            "Pulm": {
+                "asthma": "https://www.aaaai.org",
+                "COPD": "https://www.goldcopd.org",
+                "pulmonary embolism": "https://www.heart.org",
+                "pulmonary hypertension": "https://www.uptodate.com"
+            }
+        };
+
+        function navigateToSite(category) {
+            const dropdown = document.getElementById(`${category}Dropdown`);
+            const selectedTopic = dropdown.value;
+            if (selectedTopic) {
+                window.location.href = dropdownData[category][selectedTopic];
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cardiology Dropdown -->
+        <div class="dropdown-container">
+            <h2>Cardiology <strong>Dropdown</strong></h2>
+            <label for="CardiologyDropdown">Select a topic:</label>
+            <select id="CardiologyDropdown">
+                <option value="">-- Select a Topic --</option>
+                <script>
+                    for (let topic in dropdownData["Cardiology"]) {
+                        document.write(`<option value="${topic}">${topic}</option>`);
+                    }
+                </script>
+            </select>
+            <button onclick="navigateToSite('Cardiology')">Go</button>
+        </div>
+
+        <!-- Renal Dropdown -->
+        <div class="dropdown-container">
+            <h2>Renal <strong>Dropdown</strong></h2>
+            <label for="RenalDropdown">Select a topic:</label>
+            <select id="RenalDropdown">
+                <option value="">-- Select a Topic --</option>
+                <script>
+                    for (let topic in dropdownData["Renal"]) {
+                        document.write(`<option value="${topic}">${topic}</option>`);
+                    }
+                </script>
+            </select>
+            <button onclick="navigateToSite('Renal')">Go</button>
+        </div>
+
+        <!-- Endocrinology Dropdown -->
+        <div class="dropdown-container">
+            <h2>Endo <strong>Dropdown</strong></h2>
+            <label for="EndoDropdown">Select a topic:</label>
+            <select id="EndoDropdown">
+                <option value="">-- Select a Topic --</option>
+                <script>
+                    for (let topic in dropdownData["Endo"]) {
+                        document.write(`<option value="${topic}">${topic}</option>`);
+                    }
+                </script>
+            </select>
+            <button onclick="navigateToSite('Endo')">Go</button>
+        </div>
+
+        <!-- Pulmonary Dropdown -->
+        <div class="dropdown-container">
+            <h2>Pulm <strong>Dropdown</strong></h2>
+            <label for="PulmDropdown">Select a topic:</label>
+            <select id="PulmDropdown">
+                <option value="">-- Select a Topic --</option>
+                <script>
+                    for (let topic in dropdownData["Pulm"]) {
+                        document.write(`<option value="${topic}">${topic}</option>`);
+                    }
+                </script>
+            </select>
+            <button onclick="navigateToSite('Pulm')">Go</button>
+        </div>
+    </div>
+
+</body>
+</html>
