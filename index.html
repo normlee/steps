@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Example</title>
+    <title>Hyperlinked Table</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,11 +30,19 @@
         tr:hover {
             background-color: #ddd;
         }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+        a:hover {
+            color: red;
+        }
     </style>
 </head>
 <body>
 
-    <h2>Sample Table with 4 Columns and 20 Rows</h2>
+    <h2>Table with Hyperlinked Dummy Values</h2>
 
     <table>
         <thead>
@@ -46,18 +54,30 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Generating 20 rows dynamically -->
-            <!-- You can replace the data inside <td> with your own values -->
-            <script>
-                for (let i = 1; i <= 20; i++) {
-                    document.write("<tr>");
-                    document.write(`<td>Row ${i} - Col 1</td>`);
-                    document.write(`<td>Row ${i} - Col 2</td>`);
-                    document.write(`<td>Row ${i} - Col 3</td>`);
-                    document.write(`<td>Row ${i} - Col 4</td>`);
-                    document.write("</tr>");
-                }
-            </script>
+            <tr>
+                <td><a href="https://www.google.com" target="_blank">Google</a></td>
+                <td><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></td>
+                <td><a href="https://www.bbc.com" target="_blank">BBC</a></td>
+                <td><a href="https://www.nytimes.com" target="_blank">NY Times</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.reddit.com" target="_blank">Reddit</a></td>
+                <td><a href="https://www.amazon.com" target="_blank">Amazon</a></td>
+                <td><a href="https://www.ebay.com" target="_blank">eBay</a></td>
+                <td><a href="https://www.github.com" target="_blank">GitHub</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.twitch.tv" target="_blank">Twitch</a></td>
+                <td><a href="https://www.linkedin.com" target="_blank">LinkedIn</a></td>
+                <td><a href="https://www.microsoft.com" target="_blank">Microsoft</a></td>
+                <td><a href="https://www.apple.com" target="_blank">Apple</a></td>
+            </tr>
+            <tr>
+                <td><a href="https://www.netflix.com" target="_blank">Netflix</a></td>
+                <td><a href="https://www.spotify.com" target="_blank">Spotify</a></td>
+                <td><a href="https://www.tesla.com" target="_blank">Tesla</a></td>
+                <td><a href="https://www.nasa.gov" target="_blank">NASA</a></td>
+            </tr>
         </tbody>
     </table>
 
